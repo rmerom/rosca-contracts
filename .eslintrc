@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended", "./tools/eslint/google.eslintrc.js"],
   "rules": {
     // make line length 120
     "max-len": [1, 120],
