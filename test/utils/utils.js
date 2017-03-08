@@ -29,7 +29,7 @@ module.exports = {
   },
 
   createROSCA: function(ROUND_PERIOD_IN_DAYS, CONTRIBUTION_SIZE, START_TIME_DELAY,
-                        MEMBER_LIST, SERVICE_FEE_IN_THOUSANDTHS) {
+                        MEMBER_LIST, SERVICE_FEE_IN_THOUSANDTHS, useERC20Token) {
     this.mineOneBlock(); // mine an empty block to ensure latest's block timestamp is the current Time
 
     let latestBlock = web3.eth.getBlock("latest");
