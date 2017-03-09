@@ -7,4 +7,7 @@ module.exports = function(deployer) {
     deployer.deploy(ROSCATest, 0 /* use ETH */, 3, 1e16 , simulatedTimeNow + (86400 + 10) ,
         [accounts[1],accounts[2],accounts[3]]
         , 2);
+    deployer.deploy(ExampleToken, 0 /* use ETH */, 3, 1e16 , simulatedTimeNow + (86400 + 10) ,
+        [accounts[1],accounts[2],accounts[3]]
+        , 2);
 };
