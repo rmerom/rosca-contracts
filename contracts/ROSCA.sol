@@ -177,7 +177,7 @@ contract ROSCA {
     * Note it's the creator's responsibility to check that the provided contract is ERC20 compliant and that
     * it's safe to use.
     */
-  function ROSCA (
+  function ROSCA(
       ERC20TokenInterface erc20tokenContract,  // pass 0 to use ETH
       uint16 roundPeriodInDays_,
       uint128 contributionSize_,
@@ -443,7 +443,7 @@ contract ROSCA {
     }
 
     uint256 amountToWithdraw = totalCredit - totalDebit;
-    uint256 amountAvailable = this.balance - totalFees;
+    uint256 amountAvailable = getBalance() - totalFees;
 
     if (amountAvailable < amountToWithdraw) {
       // This may happen if some participants are delinquent.
@@ -568,7 +568,7 @@ contract ROSCA {
    * this sends all the funds to the foreperson by selfdestructing this contract.
    */
   function emergencyWithdrawal() onlyFromForeperson onlyIfEscapeHatchActive {
-    LogEmergencyWithdrawalPerformed(this.balance);
+    LogEmergencyWithdrawalPerformed(getBalance());
     // Send everything, including potential fees, to foreperson to disperse offline to participants.
     selfdestruct(foreperson);
   }
