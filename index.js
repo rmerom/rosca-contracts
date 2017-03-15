@@ -30,8 +30,8 @@ function getContractContents(filename) {
 
 
 let init = function() {
-  let input = { 'ROSCA.sol' : getContractContents('ROSCA.sol').contents };
-  let output = solc.compile({ sources: input }, 1, getContractContents);
+  let input = {'ROSCA.sol': getContractContents('ROSCA.sol').contents};
+  let output = solc.compile({sources: input}, 1, getContractContents);
   let contractOutput = output.contracts['ROSCA.sol:ROSCA'];
   let roscaContractAbi = JSON.parse(contractOutput.interface);
   contractCache = {abi: roscaContractAbi, bytecode: contractOutput.bytecode};
